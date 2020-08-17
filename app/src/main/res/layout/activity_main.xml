@@ -2,6 +2,18 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="user"
+            type="com.lionelnkeoua.databiding.User"/>
+
+        <variable
+            name="eventHandler"
+            type="com.lionelnkeoua.databiding.EventHandler"/>
+
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,6 +49,7 @@
                 android:layout_below="@+id/imgUser"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15sp"
+                android:text="@{user.name, default = name}"
                 android:textSize="32sp" />
 
             <TextView
@@ -45,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_name"
                 android:layout_centerHorizontal="true"
+                android:text="@{user.adress, default = adress}"
                 android:textAllCaps="true"
                 android:textSize="14sp" />
 
@@ -76,7 +90,8 @@
                         android:id="@+id/tvFollowers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="25sp" />
+                        android:text='@{user.follower, default = "0 K"}'
+                        android:textSize="25sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -108,7 +123,8 @@
                         android:id="@+id/tvfollowing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="25sp" />
+                        android:text='@{user.following, default = "0 K"}'
+                        android:textSize="25sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -122,5 +138,15 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFollow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linlay1"
+            android:background="@color/colorPrimary"
+            android:text="Follow"
+            android:onClick="@{() -> eventHandler.onClickHandler(user.name)}"
+            android:padding="8dp" />
     </RelativeLayout>
 </layout>
