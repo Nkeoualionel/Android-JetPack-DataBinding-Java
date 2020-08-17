@@ -37,7 +37,6 @@
                 android:layout_below="@+id/imgUser"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15sp"
-                android:text="Lionel NKEOUA "
                 android:textSize="32sp" />
 
             <TextView
@@ -46,7 +45,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_name"
                 android:layout_centerHorizontal="true"
-                android:text="brazzaville, congo"
                 android:textAllCaps="true"
                 android:textSize="14sp" />
 
@@ -78,7 +76,6 @@
                         android:id="@+id/tvFollowers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="453K"
                         android:textSize="25sp" />
 
                     <TextView
@@ -111,7 +108,6 @@
                         android:id="@+id/tvfollowing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="873"
                         android:textSize="25sp" />
 
                     <TextView
