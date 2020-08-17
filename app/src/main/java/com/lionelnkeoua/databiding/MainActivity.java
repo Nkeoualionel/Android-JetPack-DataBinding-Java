@@ -9,18 +9,14 @@ import com.lionelnkeoua.databiding.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+       ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-       binding.tvAddress.setText("1081 Rue st anne bis ouenze, brazzaville");
-       binding.tvFollowers.setText("100K");
-       binding.tvfollowing.setText("50K");
-       binding.tvName.setText("Lionel NKEOUA");
-
+       binding.setUser(new User("Lionel NKEOUA", "1081 Rue st anne bis ouenze, brazzaville", "100K", "50K"));
+       binding.setEventHandler(new EventHandler(this));
     }
 }
